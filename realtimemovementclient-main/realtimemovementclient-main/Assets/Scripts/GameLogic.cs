@@ -8,20 +8,12 @@ public class GameLogic : MonoBehaviour
 
     Vector2 characterPositionInPercent;
     Vector2 characterVelocityInPercent;
-    //const float CharacterSpeed = 0.25f;
-    //float DiagonalCharacterSpeed;
 
     void Start()
     {
-
         NetworkClientProcessing.SetGameLogic(this);
 
-        Sprite circleTexture = Resources.Load<Sprite>("Circle");
-
-        character = new GameObject("Character");
-
-        character.AddComponent<SpriteRenderer>();
-        character.GetComponent<SpriteRenderer>().sprite = circleTexture;
+        CreateCharacter();
     }
     void Update()
     {
@@ -82,4 +74,13 @@ public class GameLogic : MonoBehaviour
         characterPositionInPercent = pos;
     }
 
+    public void CreateCharacter()
+    {
+        Sprite circleTexture = Resources.Load<Sprite>("Circle");
+
+        character = new GameObject("Character");
+
+        character.AddComponent<SpriteRenderer>();
+        character.GetComponent<SpriteRenderer>().sprite = circleTexture;
+    }
 }

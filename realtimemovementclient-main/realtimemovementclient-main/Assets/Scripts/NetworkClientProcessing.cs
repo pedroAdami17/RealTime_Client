@@ -26,7 +26,10 @@ static public class NetworkClientProcessing
             Debug.Log("Element " + i + ": " + csv[i]);
         }
 
-
+        if(signifier == ServerToClientSignifiers.SpawnPlayer)
+        {
+            //spawn new player
+        }
 
         if (signifier == ServerToClientSignifiers.VelocityAndPosition)
         {
@@ -99,6 +102,7 @@ static public class ClientToServerSignifiers
 static public class ServerToClientSignifiers
 {
     public const int VelocityAndPosition = 1;
+    public const int SpawnPlayer = 2;
 }
 
 static public class KbInputDirections
