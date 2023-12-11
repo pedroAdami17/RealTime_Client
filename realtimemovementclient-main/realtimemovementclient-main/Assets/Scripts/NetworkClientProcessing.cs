@@ -29,6 +29,7 @@ static public class NetworkClientProcessing
         if(signifier == ServerToClientSignifiers.SpawnPlayer)
         {
             //spawn new player
+            gameLogic.CreateCharacter();
         }
 
         if (signifier == ServerToClientSignifiers.VelocityAndPosition)
